@@ -1,2 +1,3 @@
 # linux-configuration
-Some configuration files
+
+Store some configuration files (e.g, vimrc) in this store.

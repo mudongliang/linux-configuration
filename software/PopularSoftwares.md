@@ -13,17 +13,14 @@
     - 邮件客户端
         - [Thunderbird](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#thunderbird)
         - [Evolution](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#evolution)
-        - Geary
         - [Mutt](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#mutt)
     - 即时聊天
         - [WeChat](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#wechat)
         - [Skype for Linux](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#skype-beta)
         - [Skype WebPage](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#skype-webpage)
-        - BearyChat
-        - Telegram
+        - [Telegram](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#telegram)
         - [Empathy](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#empathy)
         - [Pidgin](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#pidgin)
-        - XChat
         - [HexChat](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#hexchat)
         - [Corebird](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#corebird)
     - 文件传输
@@ -33,21 +30,19 @@
         - [Transmission](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#transmission)
         - [Aria2](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#aria2)
         - [Filezilla](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#filezilla)
-        - qBittorrent
     - 云存储
         - [百度云](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#bcloud)
-        - 坚果云
-        - Dropbox
+        - [坚果云](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#nutstore)
+        - [Dropbox](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#dropbox)
         - Google Drive
         - One Drive
-        - ownCloud
+        - [ownCloud](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#owncloud)
     - 网络支付
         - [支付宝](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#支付宝)
 - 图像影音
     - 音乐播放
         - [kwplayer](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#kwplayer)
         - [FeelUOwn](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#feeluown)
-        - 网易云音乐 Linux客户端
         - [Banshee](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#banshee)
         - [Rhythmbox](https://github.com/MintCN/Basics/blob/master/PopularSoftwares.md#rhythmbox)
     - 视频播放
@@ -74,9 +69,8 @@
         - Unzip
 - 办公应用
     - 输入法
-        - Fcitx + sunpinyin
-        - Fcitx + googlepinyin
-        - Fcitx + sogoupinyin
+        - Fcitx + SunPinyin/GooglePinyin
+        - Fcitx + SogouPinyin
     - 文档阅读
         - Evince
         - Okular
@@ -103,10 +97,7 @@
         - Boxes
 - 监视和控制
     - 硬件查询
-        - CPU-G
         - Hardinfo
-        - I-Nex
-        - Psensor
     - 系统监视
         - System Monitor
 	- Htop
@@ -114,7 +105,6 @@
         - TeamViewer
         - Chrome Remote Desktop
         - Remmina
-        - AnyDesk
         - Putty
 - 系统安全
     - 密码管理
@@ -147,7 +137,6 @@
         - Emacs
     - 集成开发环境
         - Eclipse IDE
-        - JetBrains IDE
         - Wireshark
         - Code Blocks
 - 其他
@@ -392,6 +381,7 @@ sudo apt-get install thunderbird-trunk
 sudo apt-get purge thunderbird
 
 # 2. Thunderbird PPA
+sudo apt-get purge thunderbird
 sudo add-apt-repository -r ppa:ubuntu-mozilla-daily/ppa
 sudo apt-get update
 ```
@@ -415,8 +405,6 @@ sudo apt-get update
 
     sudo apt-get purge evolution
 
-
-### Geary
 
 ### Mutt
 
@@ -469,10 +457,6 @@ sudo apt-get update
 
     sudo dpkg -r skypeforlinux
 
-#### 备注
-
-目前只支持 64 位版本的 `deb` 和 `rpm` 安装包。
-
 
 ### Skype WebPage
 
@@ -480,14 +464,28 @@ sudo apt-get update
 
 最清晰的免费网络电话，提供文字、声音和视频聊天
 
-#### 安装方法
+使用 Skype for Linux 的[网页版本](https://web.skype.com)
 
-使用 Skype Beta 的[网页版本](https://web.skype.com)
-
-
-### BearyChat
 
 ### Telegram
+
+#### 介绍
+
+a new era of messaging
+
+#### 下载位置
+
+[Telegram Desktop](https://desktop.telegram.org/)
+
+#### 安装方法
+
+    wget -O- https://telegram.org/dl/desktop/linux | sudo tar xJ -C /opt/
+    sudo ln -s /opt/Telegram/Telegram /usr/local/bin/telegram-desktop
+
+#### 卸载方法
+
+    sudo rm -rf /opt/Telegram /usr/local/bin/telegram-desktop
+
 
 ### Empathy
 
@@ -503,15 +501,11 @@ sudo apt-get update
 
 #### 安装方法
 
-```
-sudo apt-get install empathy
-```
+    sudo apt-get install empathy
 
 #### 卸载方法
 
-```
-sudo apt-get purge empathy
-```
+    sudo apt-get purge empathy
 
 
 ### Pidgin
@@ -532,8 +526,6 @@ sudo apt-get purge empathy
 
     sudo apt-get purge pidgin
 
-
-### XChat
 
 ### HexChat
 
@@ -557,6 +549,7 @@ sudo apt-get install hexchat
 sudo apt-get purge hexchat
 ```
 
+
 ### Corebird
 
 #### 介绍
@@ -579,9 +572,8 @@ sudo apt-get install corebird
 sudo apt-get purge corebird
 ```
 
-## 文件传输
 
-### ~~XwareDesktop~~
+## 文件传输
 
 ### FlareGet
 
@@ -659,8 +651,6 @@ sudo apt-get purge corebird
     sudo apt-get purge transmission
 
 
-### qBittorrent
-
 ### Aria2
 
 #### 介绍
@@ -701,8 +691,6 @@ sudo apt-get purge corebird
 
 ## 云存储
 
-### ~~金山快盘~~
-
 ### bcloud
 
 #### 介绍
@@ -719,7 +707,7 @@ sudo apt-get purge corebird
 ```
 git clone https://github.com/LiuLang/bcloud-packages
 cd bcloud-packages/
-sudo gdebi bcloud_XXX_all.deb
+sudo gdebi bcloud_3.8.2-1_all.deb
 cd ..
 rm -rf bcloud-packages
 ```
@@ -728,8 +716,80 @@ rm -rf bcloud-packages
 
     sudo dpkg -r bcloud
 
+### nutstore
+
+#### 介绍
+
+任何设备，随时随地实现文件共享
+
+#### 下载位置
+
+[Download](https://www.jianguoyun.com/s/downloads/linux)
+
+#### 安装方法
+
+    sudo gdebi nautilus_nutstore_amd64.deb
+
+#### 卸载方法
+
+    sudo apt purge nautilus_nutstore
+
+
+### Dropbox
+
+#### 介绍
+
+The secure file sharing and storage solution that employees and IT admins trust.
+
+#### 下载位置
+
+[Official Website](https://www.dropbox.com/)
+
+[Download](https://www.dropbox.com/install)
+
+#### 安装方法
+
+    sudo apt install nautilus-dropbox
+
+#### 卸载方法
+
+    sudo apt purge nautilus-dropbox
+
+### Google Drive
+
+https://drive.google.com/
+
+### One Drive
+
+https://onedrive.live.com/
 
 ### ownCloud
+
+#### 介绍
+
+ownCloud is a suite of client–server software for creating and using file hosting services.
+
+#### 下载位置
+
+[Download](https://owncloud.org/download/#owncloud-desktop-client-linux)
+
+#### 安装方法
+
+```
+sudo su root
+echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Debian_9.0/ /' > /etc/apt/sources.list.d/isv:ownCloud:desktop.list
+apt-get update
+apt-get install owncloud-client
+```
+
+#### 卸载方法
+
+```
+sudo rm /etc/apt/sources.list.d/isv:ownCloud:desktop.list
+sudo apt purge owncloud-client
+sudo apt update
+```
+
 
 ## 网络支付
 
@@ -758,13 +818,6 @@ Press any key to quit...
 
 #### 卸载方法
 
-## 远程控制
-
-### TeamViewer
-
-### Remmina
-
-### AnyDesk
 
 # 图像影音
 
@@ -1085,33 +1138,123 @@ Gnome桌面中的图片查看器及浏览器
 
 ### Nautilus
 
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 ## 压缩打包
 
 ### fileroller
 
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 ### unzip/zip
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 # 办公应用
 
 ## 输入法
 
-### Fcitx + sunpinyin
-### Fcitx + googlepinyin
-### Fcitx + sogoupinyin
+### Fcitx + SunPinyin/GooglePinyin
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### Fcitx + SogouPinyin
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 ## 文档阅读
 
 ### Evince
 
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 ### Okular
 
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 ### Foxit Reader
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 ## 办公套件
 
 ### Libre Office
 
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 ### WPS Office
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 ## 笔记记事
 
@@ -1119,9 +1262,20 @@ Gnome桌面中的图片查看器及浏览器
 
 记事和清单
 
+https://keep.google.com/
+
 ### NixNote
 
+#### 介绍
+
 [Evernote 开源版本](https://sourceforge.net/projects/nevernote/)
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 # 教育科学
 
@@ -1129,35 +1283,223 @@ Gnome桌面中的图片查看器及浏览器
 
 ### Texmaker
 
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 ### Latexila
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 ### Lyx
 
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 ### TeXstudio
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 ## 科学软件
 
 ### Mendeley
 
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 # 虚拟化
 
 ## 虚拟机
 
-### VMware Play/Workstation
+### VMware Workstation
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 ### VirtualBox
 
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 ### Boxes
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 # 监视和控制
 
 ## 硬件查询
 
+### Hardinfo
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 ## 系统监视
+
+### System Monitor
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### Htop
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 ## 系统安全
 
 ## 远程控制
+
+### TeamViewer
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### Chrome Remote Desktop
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### Remmina
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### Putty
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+# 系统安全
+
+## 密码管理
+
+### KeePass2
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### KeePassX
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+## 杀毒软件
+
+### ClamAV
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 # 系统工具
 
@@ -1223,22 +1565,172 @@ GNU screen 类似的程序，可作为 screen 的替代品使用
 
 ## Shell
 
+## 启动盘制作工具
+
+### UNetbootin
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### dd
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 # 系统管理
 
 ## 配置工具
 
 ### Tweak Tool
 
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 # 程序开发
 
 ## 版本控制
+
+### Git
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### SVN
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 ## 本文编辑器
 
 ### Sublime Text
 
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### Visual Studio Code
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### Gedit
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### Atom
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### Vim
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### Emacs
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
 ## 集成开发环境
 
 ### Eclipse
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### Wireshark
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
+
+### Code Blocks
+
+#### 介绍
+
+#### 下载位置
+
+#### 安装方法
+
+#### 卸载方法
+
 
 # 其他

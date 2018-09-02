@@ -1,0 +1,52 @@
+#!/bin/bash
+# example for virtual example
+
+case "$1" in 
+	dl_pt)
+		iso="/home/ubuntu/vmware/dl_pt/UbuntuServer.vmx"
+		;;
+	list)
+		echo -e "All my VMs are as follows: "
+		echo -e "\tUbuntu14.04LTS-pt"
+		exit 0
+		;;
+	status)
+		vmrun list
+		exit 0
+		;;
+	*)
+		echo "Operation supported is as follows:"
+		echo "Usage: $0 list   : list names  of all the VMs"
+		echo "       $0 status : list status of all the VMs"
+		echo "       $0 < VM Name > status | start | stop | reset | suspend"
+		exit 0
+		;;
+esac
+
+case "$2" in
+	start)
+		vmrun start "$iso" nogui
+		;;
+	stop)
+		vmrun stop  "$iso" 
+		;;
+	reset)
+		vmrun reset "$iso" 
+		;;
+	suspend)
+		vmrun suspend "$iso"
+		;;
+	status)
+		vmrun list | grep "$1" > /dev/null 
+		if [ $? -eq 0 ]; then
+			echo "running"
+		else
+			echo "close"
+		fi
+		;;
+	*)
+		echo "Please provide the following correct operations:"
+		echo "start|stop|reset|suspend|status"
+		exit 1
+		;;
+esac

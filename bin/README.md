@@ -1,1 +1,1 @@
-Store some binary files (e.g, connectvm, checkvm) in this directory.
+Store some executable files (e.g, connectvm, checkvm) in this directory.

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# double check if $LINUX_CONFIG_REPO exists
+
+cp $LINUX_CONFIG_REPO/extensions/gnome-shell-extensions.zip $HOME/.local/share/gnome-shell/
+cd $HOME/.local/share/gnome-shell/
+unzip gnome-shell-extensions.zip
+rm gnome-shell-extensions.zip
+
+echo 'You need to restart the gnome-shell with `Alt+F2 -> r -> Enter`, and enable extensions in gnome-tweak-tool'

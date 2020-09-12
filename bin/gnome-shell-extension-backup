@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# double check if $LINUX_CONFIG_REPO exists
+
+cd $HOME/.local/share/gnome-shell/
+zip -r /tmp/gnome-shell-extensions.zip extensions/
+mv /tmp/gnome-shell-extensions.zip $LINUX_CONFIG_REPO/extensions/

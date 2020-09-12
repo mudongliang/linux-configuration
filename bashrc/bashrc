@@ -1,6 +1,3 @@
 alias rm='trash'
 
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
+export LINUX_CONFIG_REPO=~/.config/linux_config_repo/

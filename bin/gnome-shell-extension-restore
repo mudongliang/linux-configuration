@@ -1,6 +1,15 @@
 #!/bin/bash
 
 # double check if $LINUX_CONFIG_REPO exists
+if [ -z $LINUX_CONFIG_REPO ] || [ $LINUX_CONFIG_REPO != "$HOME/.config/linux_config_repo" ] ; then
+  echo "\$LINUX_CONFIG_REPO is not defined or with a non-default value"
+  exit
+fi
+
+if [ -n "$(ls -A $HOME/.local/share/gnome-shell)" ]; then
+  echo "GNOME shell extension folder is not empty."
+  exit
+fi
 
 cp $LINUX_CONFIG_REPO/extensions/gnome-shell-extensions.zip $HOME/.local/share/gnome-shell/
 cd $HOME/.local/share/gnome-shell/

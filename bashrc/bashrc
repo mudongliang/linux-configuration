@@ -1,3 +1,9 @@
+
+# My Linux Configuration
+## export variable and PATH
+export LINUX_CONFIG_REPO=$HOME/.config/linux_config_repo
+export PATH=$LINUX_CONFIG_REPO:$PATH
+
+## own customized alias
 alias rm='trash'
 
-export LINUX_CONFIG_REPO=$HOME/.config/linux_config_repo

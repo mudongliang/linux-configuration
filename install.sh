@@ -38,8 +38,7 @@ install_extensions(){
 
 get_software(){
   pushd $LINUX_CONFIG_REPO/installation.d/get.d
-  SW_LIST=(get-tmux
-           get-docker)
+  SW_LIST=(get_tmux get_ssr)
 
   for SW in ${SW_LIST[@]}; do
     prompt $SW
@@ -49,7 +48,7 @@ get_software(){
 
 config_software(){
   pushd $LINUX_CONFIG_REPO/installation.d/conf.d
-  CONF_LIST=(config-git)
+  CONF_LIST=(config_git config_tmux)
 
   for CONF in ${CONF_LIST[@]}; do
     prompt $CONF
@@ -63,7 +62,7 @@ check_distribution
 
 install_bashrc
 
-install_extensions
+#install_extensions
 
 get_software
 

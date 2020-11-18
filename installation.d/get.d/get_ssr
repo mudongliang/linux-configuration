@@ -15,4 +15,5 @@ esac
 
 check_distribution
 
-curl -sSL https://get.docker.com/ | sh
+./ssr install
+mkdir ~/bin/ && cp ssr ~/bin/

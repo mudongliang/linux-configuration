@@ -6,7 +6,7 @@ export LINUX_CONFIG_REPO=$HOME/.config/linux_config_repo
 prompt() {
   read -p 'Will you run '$1'?[y/N]' PMT
   if [[ $PMT == 'y' || $PMT == 'Y' ]]; then
-    . ./$1
+    . $1
   fi
 }
 
@@ -41,7 +41,7 @@ get_software(){
   SW_LIST=(get_tmux get_ssr)
 
   for SW in ${SW_LIST[@]}; do
-    prompt $SW
+    prompt ${PWD}/$SW
   done
   popd
 }
@@ -51,14 +51,14 @@ config_software(){
   CONF_LIST=(config_git config_tmux)
 
   for CONF in ${CONF_LIST[@]}; do
-    prompt $CONF
+    prompt ${PWD}/$CONF
   done
   popd
 }
 
-build_dependency
-
 check_distribution
+
+build_dependency
 
 install_bashrc
 

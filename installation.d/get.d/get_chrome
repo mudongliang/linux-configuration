@@ -1,0 +1,19 @@
+#!/bin/bash
+
+check_distribution(){
+  OS=$(cat /etc/issue | head -n 1 | cut -f 1 -d ' ')
+  case $OS in
+  'Ubuntu'|'Debian')
+    sudo apt -y update; sudo apt -y upgrade;
+    ;;
+  *)
+    echo "Your distribution - $OS is not supported"
+    exit
+    ;;
+esac
+}
+
+check_distribution
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo gdebi google-chrome-stable_current_amd64.deb

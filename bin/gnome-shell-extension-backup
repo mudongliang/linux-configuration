@@ -7,5 +7,4 @@ if [ -z $LINUX_CONFIG_REPO ] || [ $LINUX_CONFIG_REPO != "$HOME/.config/linux_con
 fi
 
 cd $HOME/.local/share/gnome-shell/
-zip -r /tmp/gnome-shell-extensions.zip extensions/
-mv /tmp/gnome-shell-extensions.zip $LINUX_CONFIG_REPO/extensions/
+zip -r $LINUX_CONFIG_REPO/extensions/gnome-shell-extensions.zip extensions/

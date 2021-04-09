@@ -1,0 +1,19 @@
+#!/bin/bash
+
+check_distribution(){
+  OS=$(cat /etc/issue | head -n 1 | cut -f 1 -d ' ')
+  case $OS in
+  'Ubuntu'|'Debian')
+    sudo apt -y update; sudo apt -y upgrade;
+    ;;
+  *)
+    echo "Your distribution - $OS is not supported"
+    exit
+    ;;
+esac
+}
+
+check_distribution
+
+wget https://github.com/shadowsocksrr/electron-ssr/releases/download/v0.2.7/electron-ssr-0.2.7.deb -O electron-ssr.deb
+sudo gdebi eletron-ssr.deb

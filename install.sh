@@ -42,7 +42,7 @@ install_extensions(){
 
 get_software(){
   pushd $LINUX_CONFIG_REPO/installation.d/get.d
-  SW_LIST=(get_htop get_vim get_tmux get_ssr get_peda get_chrome get_unzip get_unrar get_teamviewer get_sshd get_vscode get_skype get_mendeley get_clamav get_terminator get_screenfetch)
+  SW_LIST=(get_htop get_vim get_tmux get_ssr get_peda get_chrome get_unzip get_unrar get_teamviewer get_sshd get_vscode get_skype get_mendeley get_clamav get_terminator get_screenfetch get_eletron-ssr)
 
   for SW in ${SW_LIST[@]}; do
     prompt ${PWD}/$SW

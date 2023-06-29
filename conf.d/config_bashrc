@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cat >> ~/.bashrc << EOF
+# My Linux Configuration
+export PATH=$HOME/.config/linux_config_repo:$PATH
+alias rm='trash'
+EOF

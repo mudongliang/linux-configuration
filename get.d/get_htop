@@ -1,0 +1,27 @@
+#!/bin/bash
+
+check_distribution() {
+    # /etc/os-release does exist in most Linux distributions, and BSD variants
+    test -e /etc/os-release && os_release='/etc/os-release' || os_release='/usr/lib/os-release'
+    . "${os_release}"
+    case $ID in
+        'ubuntu')
+	    test -e /etc/sudoers || add_sudo_user
+            sudo apt -y update; sudo apt -y upgrade;
+            ;;
+        'debian')
+	    test -e /etc/sudoers || add_sudo_user
+            sudo apt -y update; sudo apt -y upgrade;
+            ;;
+        *)
+            echo "Your distribution - $NAME is not supported"
+            exit
+            ;;
+    esac
+}
+
+if [ ! -z ${LINUX_CONFIG_REPO=$HOME+x} ]; then
+    check_distribution
+fi
+
+sudo apt install -y htop

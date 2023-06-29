@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# double check if $LINUX_CONFIG_REPO exists
+if [ -z $LINUX_CONFIG_REPO ] || [ $LINUX_CONFIG_REPO != "$HOME/.config/linux_config_repo" ] ; then
+  echo "\$LINUX_CONFIG_REPO is not defined or with a non-default value"
+  exit
+fi
+
+pushd $HOME/.local/share/gnome-shell/
+zip -r $LINUX_CONFIG_REPO/gnome-shell-extensions.zip extensions/*

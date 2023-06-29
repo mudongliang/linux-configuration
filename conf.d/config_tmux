@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cat >> ~/.tmux.conf << EOF
+# Enable mouse support
+set -g mouse on
+EOF

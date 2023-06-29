@@ -1,7 +1,0 @@
-#!/bin/bash
-
-echo """# Set vi as the default editor
-set -g status-keys vi
-# Enable mouse support
-set -g mouse on
-""" >> ~/.tmux.conf
